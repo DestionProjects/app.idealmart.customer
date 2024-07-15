@@ -2,6 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:idealmart_customer/constants/fonts_colors.dart';
+import 'package:idealmart_customer/constants/textstyles.dart';
+import 'package:idealmart_customer/features/home/presentation/pages/home_page.dart';
+import 'package:idealmart_customer/features/login/presentation/pages/sign_in.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../controllers/intro_controller.dart';
 
 class IntroPage extends StatelessWidget {
@@ -20,45 +25,38 @@ class IntroPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.network(
-                    content['image']!,
-                    height: 150,
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: List.generate(
-                      controller.introContent.length,
-                      (index) => Obx(() {
-                        return Container(
-                          margin: EdgeInsets.symmetric(horizontal: 4.0),
-                          width: 10.0,
-                          height: 10.0,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: controller.currentIndex.value == index
-                                ? Colors.orange
-                                : Colors.grey,
-                          ),
-                        );
-                      }),
+                  Container(
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(color: CustomColors.green)),
+                    child: ClipOval(
+                      child: Image.network(
+                        content['image']!,
+                        width: 300,
+                        height: 300,
+                      ),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
+                  Obx(() => AnimatedSmoothIndicator(
+                      activeIndex: controller.currentIndex.value, count: 3,effect: ExpandingDotsEffect(
+                      activeDotColor: CustomColors.green,
+                      dotColor: CustomColors.grey.withOpacity(0.3)),)),
+                  const SizedBox(height: 20),
                   Text(
                     content['title']!,
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    style: TextStyles.styleELBB,
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: Text(
                       content['description']!,
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 16),
+                      style: TextStyles.styleLB,
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                 ],
               ),
             );
@@ -68,9 +66,10 @@ class IntroPage extends StatelessWidget {
             right: 30,
             child: FloatingActionButton(
               onPressed: () {
-                // Action when the button is pressed
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) =>  SignIn()));
               },
-              child: Icon(
+              child: const Icon(
                 Icons.arrow_forward,
                 color: Colors.white,
               ),

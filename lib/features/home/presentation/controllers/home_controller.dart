@@ -3,5 +3,5 @@
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
-  // Add any logic or data handling for the home screen here
+  RxInt carouselIndex = 0.obs;
 }
