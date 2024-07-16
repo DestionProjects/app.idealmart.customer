@@ -13,6 +13,7 @@ dependencies:
   smooth_page_indicator: ^1.2.0
   fluentui_system_icons: ^1.1.248
   fluentui_icons: ^1.0.0
+  iconsax: ^0.0.8
 
   flutter:
     sdk: flutter
@@ -33,6 +34,6 @@ flutter:
     - assets/icons/
 
   fonts:
-     - family: Poppins
-       fonts:
-         - asset: fonts/Poppins-Regular.ttf
+    - family: Poppins
+      fonts:
+        - asset: fonts/Poppins-Regular.ttf

@@ -13,14 +13,7 @@ class PasswordChangeSuccessfully extends StatelessWidget {
       backgroundColor: CustomColors.white,
       appBar: AppBar(
         backgroundColor: CustomColors.white,
-        leading: Container(
-            margin: const EdgeInsets.only(left: 10),
-            decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(color: CustomColors.green)),
-            child: IconButton(
-                icon: const Icon(Icons.arrow_back_ios_new_rounded),
-                onPressed: () {})),
+        leading: Container(),
       ),
       body: Container(
         alignment: const Alignment(0, -0.5),
@@ -60,4 +53,3 @@ class PasswordChangeSuccessfully extends StatelessWidget {
     );
   }
 }
-
