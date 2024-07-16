@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:idealmart_customer/constants/fonts_colors.dart';
 import 'package:idealmart_customer/features/home/presentation/pages/home_page.dart';
 import 'package:idealmart_customer/features/intro/presentation/bindings/intro_binding.dart';
 import 'package:idealmart_customer/features/intro/presentation/pages/intro_page.dart';
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.transparent),
+        colorScheme: ColorScheme.fromSeed(seedColor: CustomColors.green),
+        textSelectionTheme: TextSelectionThemeData(cursorColor: CustomColors.black,selectionColor: CustomColors.green.withOpacity(0.5),selectionHandleColor: CustomColors.green),
         useMaterial3: true,
       ),
       initialBinding: SplashBinding(),

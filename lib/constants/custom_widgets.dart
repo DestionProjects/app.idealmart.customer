@@ -13,7 +13,7 @@ class CustomWidgets{
           alignment: Alignment.center,
           decoration: BoxDecoration(
               color: CustomColors.green,
-              borderRadius: BorderRadius.circular(100)),
+              borderRadius: BorderRadius.circular(4)),
           child: Text(
            buttonText,
             style: TextStyles.styleLW,

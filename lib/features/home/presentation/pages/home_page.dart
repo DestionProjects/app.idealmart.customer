@@ -23,7 +23,6 @@ class HomePage extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
       backgroundColor: CustomColors.white,
@@ -32,12 +31,18 @@ class HomePage extends GetView<HomeController> {
         backgroundColor: CustomColors.white,
         leading: Container(
             margin: const EdgeInsets.only(left: 10),
-            child:
-                IconButton(icon: const Icon(Iconsax.menu_1), onPressed: () {})),
+            decoration: BoxDecoration(color: CustomColors.faintWhite,shape: BoxShape.circle),
+            child: IconButton(
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                icon: const Icon(Iconsax.menu_1), onPressed: () {})),
         actions: [
           Container(
               margin: const EdgeInsets.only(right: 10),
+              decoration: BoxDecoration(color: CustomColors.faintWhite,shape: BoxShape.circle),
               child: IconButton(
+                splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
                   icon: const Icon(Iconsax.notification), onPressed: () {})),
         ],
       ),
@@ -48,7 +53,7 @@ class HomePage extends GetView<HomeController> {
             children: [
               Expanded(
                 child: TextField(
-                  style: TextStyles.styleLB,
+                  style: TextStyles.styleMB,
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: CustomColors.faintWhite,
@@ -56,7 +61,7 @@ class HomePage extends GetView<HomeController> {
                     hintText: 'Search your Grocery',
                     hintStyle: TextStyle(
                         fontFamily: Fonts.poppins,
-                        fontSize: Dimensions.largeTextSize),
+                        fontSize: Dimensions.mediumTextSize),
                     enabledBorder: OutlineInputBorder(
                         borderSide: const BorderSide(color: Colors.transparent),
                         borderRadius: BorderRadius.circular(100)),
@@ -87,8 +92,7 @@ class HomePage extends GetView<HomeController> {
               CarouselDriver(),
             ],
             options: CarouselOptions(
-              viewportFraction: 0.8,
-              height: screenSize.height * 0.2,
+              viewportFraction: 1,
               aspectRatio: 2,
               autoPlay: true,
               autoPlayInterval: const Duration(seconds: 3),
