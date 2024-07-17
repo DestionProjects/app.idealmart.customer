@@ -8,21 +8,22 @@ class IntroController extends GetxController {
   final List<Map<String, String>> introContent = [
     {
       'image':
-          'https://img.freepik.com/premium-vector/mobile-commerce-concept-web-banner-woman-making-purchases-ordering-website-shop_9209-7350.jpg?ga=GA1.1.1751976739.1720021447&semt=ais_user',
+          // 'https://img.freepik.com/premium-photo/happy-luxury-asian-woman-travel-shopping-urban-city-vibrant-fashion-contemporary-lifestyle_148840-46625.jpg?ga=GA1.1.1751976739.1720021447&semt=ais_user',
+          'https://img.freepik.com/premium-photo/white-business-woman-using-his-smartphone-outside_62972-19654.jpg?ga=GA1.1.1751976739.1720021447&semt=ais_user',
       'title': 'Select Your Store',
       'description':
           'Pick your preferred store from our list of trusted partners to view their specific deals',
     },
     {
       'image':
-          'https://img.freepik.com/premium-vector/young-girl-opens-smartphone-accesses-online-shop-selecting-buying-shoes-bags_923732-531.jpg?w=826',
+          'https://img.freepik.com/premium-photo/shopping-supermaket-store-young-woman-casual-attire-pays-with-her-credit-card_28914-39785.jpg?ga=GA1.1.1751976739.1720021447&semt=ais_user',
       'title': 'Explore Deals',
       'description':
           'Checkout list of deals available for preferred store and choose what best for you.',
     },
     {
       'image':
-          'https://img.freepik.com/premium-vector/online-shopping-store-with-mobile-concept-chat-message-delivery-24-hours-service_24797-1199.jpg?ga=GA1.1.1751976739.1720021447&semt=ais_user',
+          'https://img.freepik.com/premium-photo/indian-shopkeepers-customers-engaging-retail-online-shopping_978786-36685.jpg?ga=GA1.1.1751976739.1720021447&semt=ais_user',
       'title': 'Enjoy Your Savings',
       'description':
           'Earn rewards and loyalty points with every purchase to save even more in the future.',

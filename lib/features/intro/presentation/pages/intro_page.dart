@@ -23,54 +23,53 @@ class IntroPage extends StatelessWidget {
       backgroundColor: CustomColors.white,
       body: Obx(() {
         final content = controller.introContent[controller.currentIndex.value];
-        return Stack(
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Align(
-              alignment: Alignment(0, -0.5),
-              child: imageCarousel(content['image']!),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(height: 40), // Space at the top
+                  Center(child: imageCarousel(content['image']!)),
+                  SizedBox(
+                      height: 20), // Adjust space between image and indicator
+                  Obx(
+                    () => AnimatedSmoothIndicator(
+                      activeIndex: controller.currentIndex.value,
+                      count: 3,
+                      effect: ExpandingDotsEffect(
+                        activeDotColor: CustomColors.green,
+                        dotHeight: 10,
+                        dotWidth: 10,
+                        dotColor: CustomColors.grey.withOpacity(0.3),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                      height: Dimensions.widthMQ *
+                          0.08), // Adjust space between indicator and text
+                  Center(child: titleCarousel(content['title']!)),
+                  SizedBox(height: 20),
+                  Center(child: descriptionCarousel(content['description']!)),
+                ],
+              ),
             ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Padding(
-                padding: const EdgeInsets.only(right: 16, left: 16, bottom: 20),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: titleCarousel(content['title']!),
-                    ),
-                    SizedBox(height: Dimensions.heightMQ * 0.02),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: descriptionCarousel(content['description']!),
-                    ),
-                    SizedBox(height: Dimensions.heightMQ * 0.08),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Obx(
-                          () => AnimatedSmoothIndicator(
-                            activeIndex: controller.currentIndex.value,
-                            count: 3,
-                            effect: ExpandingDotsEffect(
-                              activeDotColor: CustomColors.green,
-                              dotHeight: 10,
-                              dotWidth: 10,
-                              dotColor: CustomColors.grey.withOpacity(0.3),
-                            ),
-                          ),
-                        ),
-                        loginButton(() {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => SignIn()),
-                          );
-                        }),
-                      ],
-                    ),
-                  ],
-                ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  actionButton('Login', () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SignIn()),
+                    );
+                  }),
+                  actionButtonNoBorder('Signup', () {
+                    // Navigate to Signup page
+                  }),
+                ],
               ),
             ),
           ],
@@ -80,18 +79,22 @@ class IntroPage extends StatelessWidget {
   }
 
   Widget imageCarousel(String imageURL) {
-    return AspectRatio(
-      aspectRatio: 0.9,
-      child: Container(
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          // border: Border.all(color: CustomColors.green),
-        ),
-        child: Image.network(
-          imageURL,
-          fit: BoxFit.contain,
-          width: Dimensions.widthMQ * 0.7,
-          height: Dimensions.widthMQ * 0.7,
+    return Container(
+      width: Dimensions.widthMQ * 0.85, // Adjust the size as needed
+      height: Dimensions.widthMQ * 0.85, // Adjust the size as needed
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        border: Border.all(color: CustomColors.green, width: 1),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(10.0), // Padding between image and circle
+        child: ClipOval(
+          child: Image.network(
+            imageURL,
+            fit: BoxFit.cover,
+            width: double.infinity,
+            height: double.infinity,
+          ),
         ),
       ),
     );
@@ -100,31 +103,55 @@ class IntroPage extends StatelessWidget {
   Widget titleCarousel(String title) {
     return Text(
       title,
-      textAlign: TextAlign.left,
+      textAlign: TextAlign.center,
       style: TextStyles.styleELBB,
     );
   }
 
   Widget descriptionCarousel(String description) {
-    return Text(
-      description,
-      textAlign: TextAlign.left,
-      style: TextStyles.styleLB,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: Text(
+        description,
+        textAlign: TextAlign.center,
+        style: TextStyles.styleLB,
+      ),
     );
   }
 
-  Widget loginButton(VoidCallback onTap) {
+  Widget actionButton(String text, VoidCallback onTap) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
         alignment: Alignment.center,
-        width: Dimensions.widthMQ * 0.3,
+        width: Dimensions.widthMQ * 0.4, // Adjust the size as needed
+        height: 50,
+        decoration: BoxDecoration(
+          // color: CustomColors.green,
+          border: Border.all(color: CustomColors.green, width: 1.5),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Text(text,
+            style: TextStyle(
+                color: CustomColors.green,
+                fontSize: 16,
+                fontWeight: FontWeight.bold)),
+      ),
+    );
+  }
+
+  Widget actionButtonNoBorder(String text, VoidCallback onTap) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        alignment: Alignment.center,
+        width: Dimensions.widthMQ * 0.4, // Adjust the size as needed
         height: 50,
         decoration: BoxDecoration(
           color: CustomColors.green,
           borderRadius: BorderRadius.circular(8),
         ),
-        child: Text('Login', style: TextStyles.styleLW),
+        child: Text(text, style: TextStyles.styleLW),
       ),
     );
   }

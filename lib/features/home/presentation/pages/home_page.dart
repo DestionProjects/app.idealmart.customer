@@ -22,7 +22,6 @@ class HomePage extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: CustomColors.white,
       appBar: AppBar(
@@ -30,19 +29,23 @@ class HomePage extends GetView<HomeController> {
         backgroundColor: CustomColors.white,
         leading: Container(
             margin: const EdgeInsets.only(left: 10),
-            decoration: const BoxDecoration(color: CustomColors.faintWhite,shape: BoxShape.circle),
+            decoration: const BoxDecoration(
+                color: CustomColors.faintWhite, shape: BoxShape.circle),
             child: IconButton(
                 splashColor: Colors.transparent,
                 highlightColor: Colors.transparent,
-                icon: const Icon(Iconsax.menu_1), onPressed: () {})),
+                icon: const Icon(Iconsax.menu_1),
+                onPressed: () {})),
         actions: [
           Container(
               margin: const EdgeInsets.only(right: 10),
-              decoration: const BoxDecoration(color: CustomColors.faintWhite,shape: BoxShape.circle),
+              decoration: const BoxDecoration(
+                  color: CustomColors.faintWhite, shape: BoxShape.circle),
               child: IconButton(
-                splashColor: Colors.transparent,
+                  splashColor: Colors.transparent,
                   highlightColor: Colors.transparent,
-                  icon: const Icon(Iconsax.notification), onPressed: () {})),
+                  icon: const Icon(Iconsax.notification),
+                  onPressed: () {})),
         ],
       ),
       body: Padding(
@@ -60,7 +63,7 @@ class HomePage extends GetView<HomeController> {
                     hintText: 'Search your Grocery',
                     hintStyle: TextStyle(
                         fontFamily: Fonts.poppins,
-                        fontSize: Dimensions.mediumTextSize),
+                        fontSize: Dimensions.smallTextSize),
                     enabledBorder: OutlineInputBorder(
                         borderSide: const BorderSide(color: Colors.transparent),
                         borderRadius: BorderRadius.circular(100)),
