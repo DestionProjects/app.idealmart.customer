@@ -1,6 +1,7 @@
 // lib/features/intro/presentation/pages/intro_page.dart
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:idealmart_customer/constants/dimensions.dart';
 import 'package:idealmart_customer/constants/fonts_colors.dart';
@@ -12,6 +13,10 @@ import '../controllers/intro_controller.dart';
 class IntroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark,
+    ));
     final IntroController controller = Get.put(IntroController());
 
     return Scaffold(
@@ -32,33 +37,38 @@ class IntroPage extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Align(
-                        alignment: Alignment.centerLeft,
-                        child: titleCarousel(content['title']!)),
-                    SizedBox(height: Dimensions.heightMQ * 0.035),
+                      alignment: Alignment.centerLeft,
+                      child: titleCarousel(content['title']!),
+                    ),
+                    SizedBox(height: Dimensions.heightMQ * 0.02),
                     Align(
-                        alignment: Alignment.centerLeft,
-                        child: descriptionCarousel(content['description']!)),
-                    SizedBox(height: Dimensions.heightMQ * 0.1),
+                      alignment: Alignment.centerLeft,
+                      child: descriptionCarousel(content['description']!),
+                    ),
+                    SizedBox(height: Dimensions.heightMQ * 0.08),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Obx(() => AnimatedSmoothIndicator(
-                              activeIndex: controller.currentIndex.value,
-                              count: 3,
-                              effect: ExpandingDotsEffect(
-                                  activeDotColor: CustomColors.green,
-                                  dotHeight: 10,
-                                  dotWidth: 10,
-                                  dotColor: CustomColors.grey.withOpacity(0.3)),
-                            )),
+                        Obx(
+                          () => AnimatedSmoothIndicator(
+                            activeIndex: controller.currentIndex.value,
+                            count: 3,
+                            effect: ExpandingDotsEffect(
+                              activeDotColor: CustomColors.green,
+                              dotHeight: 10,
+                              dotWidth: 10,
+                              dotColor: CustomColors.grey.withOpacity(0.3),
+                            ),
+                          ),
+                        ),
                         loginButton(() {
                           Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => SignIn()));
+                            context,
+                            MaterialPageRoute(builder: (context) => SignIn()),
+                          );
                         }),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -70,13 +80,16 @@ class IntroPage extends StatelessWidget {
   }
 
   Widget imageCarousel(String imageURL) {
-    return Container(
-      decoration: BoxDecoration(
+    return AspectRatio(
+      aspectRatio: 0.9,
+      child: Container(
+        decoration: BoxDecoration(
           shape: BoxShape.circle,
-          border: Border.all(color: CustomColors.green)),
-      child: ClipOval(
+          // border: Border.all(color: CustomColors.green),
+        ),
         child: Image.network(
           imageURL,
+          fit: BoxFit.contain,
           width: Dimensions.widthMQ * 0.7,
           height: Dimensions.widthMQ * 0.7,
         ),
@@ -86,8 +99,8 @@ class IntroPage extends StatelessWidget {
 
   Widget titleCarousel(String title) {
     return Text(
-      textAlign: TextAlign.left,
       title,
+      textAlign: TextAlign.left,
       style: TextStyles.styleELBB,
     );
   }

@@ -8,24 +8,24 @@ class IntroController extends GetxController {
   final List<Map<String, String>> introContent = [
     {
       'image':
-          'https://img.freepik.com/premium-vector/smiling-delivery-man-running-with-cardbox-courier-uniform-work-cartoon-character-vector-illustration-isolated-white-background_223337-2309.jpg?ga=GA1.1.1751976739.1720021447&semt=ais_user',
-      'title': 'Title 1',
+          'https://img.freepik.com/premium-vector/mobile-commerce-concept-web-banner-woman-making-purchases-ordering-website-shop_9209-7350.jpg?ga=GA1.1.1751976739.1720021447&semt=ais_user',
+      'title': 'Select Your Store',
       'description':
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.',
+          'Pick your preferred store from our list of trusted partners to view their specific deals',
     },
     {
       'image':
-          'https://img.freepik.com/premium-vector/boy-walking-carrying-goods-return-village-vacation_10606-6396.jpg?ga=GA1.1.1751976739.1720021447&semt=ais_user',
-      'title': 'Title 2',
+          'https://img.freepik.com/premium-vector/young-girl-opens-smartphone-accesses-online-shop-selecting-buying-shoes-bags_923732-531.jpg?w=826',
+      'title': 'Explore Deals',
       'description':
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.',
+          'Checkout list of deals available for preferred store and choose what best for you.',
     },
     {
       'image':
-          'https://img.freepik.com/premium-vector/girl-with-basket-food-her-hands-gets-out-phone-concept-online-orders_638425-249.jpg?ga=GA1.1.1751976739.1720021447&semt=ais_user',
-      'title': 'Title 3',
+          'https://img.freepik.com/premium-vector/online-shopping-store-with-mobile-concept-chat-message-delivery-24-hours-service_24797-1199.jpg?ga=GA1.1.1751976739.1720021447&semt=ais_user',
+      'title': 'Enjoy Your Savings',
       'description':
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.',
+          'Earn rewards and loyalty points with every purchase to save even more in the future.',
     },
   ];
 

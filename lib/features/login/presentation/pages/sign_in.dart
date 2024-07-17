@@ -1,3 +1,5 @@
+// lib/features/login/presentation/pages/sign_in.dart
+
 import 'package:flutter/material.dart';
 import 'package:idealmart_customer/constants/custom_widgets.dart';
 import 'package:idealmart_customer/constants/dimensions.dart';
@@ -27,11 +29,26 @@ class SignIn extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Column(mainAxisSize: MainAxisSize.min, children: [
+                    // Add the image widget here
                     Padding(
                       padding: const EdgeInsets.only(bottom: 35),
                       child: Align(
-                          alignment: Alignment.center,
-                          child:LoginWidgets.headerText('Login to your account')),
+                        alignment: Alignment.center,
+                        child: Image.asset(
+                          'assets/logos/logo_dark.png', // Replace with your image URL or asset
+                          width:
+                              150, // Set the width according to your requirement
+                          height:
+                              150, // Set the height according to your requirement
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 35),
+                      child: Align(
+                          alignment: Alignment.centerLeft,
+                          child:
+                              LoginWidgets.headerText('Login to your account')),
                     ),
                     Align(
                         alignment: Alignment.centerLeft,
