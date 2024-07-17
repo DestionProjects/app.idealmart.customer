@@ -19,8 +19,10 @@ class AppStyles {
 class TextStyles {
   static TextStyle styleLB = AppStyles.defaultTextStyle(
       fontSize: Dimensions.mediumTextSize, color: Colors.black87);
-  static TextStyle styleLG = AppStyles.defaultTextStyle(
-      fontSize: Dimensions.largeTextSize, color: CustomColors.green);
+  static TextStyle styleLGB = AppStyles.defaultTextStyle(
+      fontSize: Dimensions.largeTextSize,
+      color: CustomColors.green,
+      fontWeight: FontWeight.bold);
   static TextStyle styleMG = AppStyles.defaultTextStyle(
       fontSize: Dimensions.mediumTextSize, color: CustomColors.green);
   static TextStyle styleLW = AppStyles.defaultTextStyle(
@@ -33,4 +35,7 @@ class TextStyles {
       fontSize: Dimensions.xxLargeTextSize, fontWeight: FontWeight.bold);
   static TextStyle styleSB =
       AppStyles.defaultTextStyle(fontSize: Dimensions.smallTextSize);
+  static TextStyle styleMGrey = AppStyles.defaultTextStyle(
+      fontSize: Dimensions.mediumTextSize,
+      color: CustomColors.grey.withOpacity(0.5));
 }

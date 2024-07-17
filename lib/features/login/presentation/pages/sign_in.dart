@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:idealmart_customer/constants/custom_widgets.dart';
 import 'package:idealmart_customer/constants/dimensions.dart';
 import 'package:idealmart_customer/constants/fonts_colors.dart';
+import 'package:idealmart_customer/constants/images.dart';
 import 'package:idealmart_customer/constants/text_styles.dart';
 import 'package:idealmart_customer/features/login/presentation/pages/forget_password.dart';
 import 'package:idealmart_customer/features/login/presentation/pages/sign_up.dart';
@@ -11,9 +12,14 @@ import 'package:idealmart_customer/features/navigation/presentation/pages/naviga
 
 import '../widgets/login_widgets.dart';
 
-class SignIn extends StatelessWidget {
+class SignIn extends StatefulWidget {
   const SignIn({super.key});
 
+  @override
+  State<SignIn> createState() => _SignInState();
+}
+
+class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     // final SignInController controller = Get.put(SignInController());
@@ -34,22 +40,24 @@ class SignIn extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: 35),
                       child: Align(
                         alignment: Alignment.center,
-                        child: Image.asset(
-                          'assets/logos/logo_dark.png', // Replace with your image URL or asset
-                          width:
-                              150, // Set the width according to your requirement
-                          height:
-                              150, // Set the height according to your requirement
+                        child: Container(
+                          decoration: BoxDecoration(
+                              border: Border.all(color: CustomColors.green),
+                              shape: BoxShape.circle),
+                          child: ClipOval(
+                            child: Image.asset(
+                              Images
+                                  .bg3, // Replace with your image URL or asset
+                              width: Dimensions.widthMQ *
+                                  0.6, // Set the width according to your requirement
+                              height: Dimensions.widthMQ *
+                                  0.6, // Set the height according to your requirement
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 35),
-                      child: Align(
-                          alignment: Alignment.centerLeft,
-                          child:
-                              LoginWidgets.headerText('Login to your account')),
-                    ),
+
                     Align(
                         alignment: Alignment.centerLeft,
                         child: LoginWidgets.loginText('Email')),

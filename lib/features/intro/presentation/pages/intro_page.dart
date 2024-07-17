@@ -7,6 +7,7 @@ import 'package:idealmart_customer/constants/dimensions.dart';
 import 'package:idealmart_customer/constants/fonts_colors.dart';
 import 'package:idealmart_customer/constants/text_styles.dart';
 import 'package:idealmart_customer/features/login/presentation/pages/sign_in.dart';
+import 'package:idealmart_customer/features/login/presentation/pages/sign_up.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../controllers/intro_controller.dart';
 
@@ -60,15 +61,23 @@ class IntroPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  actionButton('Login', () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SignIn()),
-                    );
-                  }),
-                  actionButtonNoBorder('Signup', () {
-                    // Navigate to Signup page
-                  }),
+                  Expanded(
+                    child: actionButton('Login', () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SignIn()),
+                      );
+                    }),
+                  ),
+                  SizedBox(width: 8),
+                  Expanded(
+                    child: actionButtonNoBorder('Signup', () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SignUp()),
+                      );
+                    }),
+                  ),
                 ],
               ),
             ),
@@ -124,7 +133,6 @@ class IntroPage extends StatelessWidget {
       onTap: onTap,
       child: Container(
         alignment: Alignment.center,
-        width: Dimensions.widthMQ * 0.4, // Adjust the size as needed
         height: 50,
         decoration: BoxDecoration(
           // color: CustomColors.green,
@@ -132,10 +140,7 @@ class IntroPage extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
         ),
         child: Text(text,
-            style: TextStyle(
-                color: CustomColors.green,
-                fontSize: 16,
-                fontWeight: FontWeight.bold)),
+            style: TextStyles.styleLGB),
       ),
     );
   }
@@ -145,7 +150,7 @@ class IntroPage extends StatelessWidget {
       onTap: onTap,
       child: Container(
         alignment: Alignment.center,
-        width: Dimensions.widthMQ * 0.4, // Adjust the size as needed
+
         height: 50,
         decoration: BoxDecoration(
           color: CustomColors.green,
