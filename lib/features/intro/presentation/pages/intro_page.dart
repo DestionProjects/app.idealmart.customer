@@ -89,8 +89,8 @@ class IntroPage extends StatelessWidget {
 
   Widget imageCarousel(String imageURL) {
     return Container(
-      width: Dimensions.widthMQ * 0.85, // Adjust the size as needed
-      height: Dimensions.widthMQ * 0.85, // Adjust the size as needed
+      width: Dimensions.widthMQ * 0.7, // Adjust the size as needed
+      height: Dimensions.widthMQ * 0.7, // Adjust the size as needed
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(color: CustomColors.green, width: 1),
@@ -139,8 +139,7 @@ class IntroPage extends StatelessWidget {
           border: Border.all(color: CustomColors.green, width: 1.5),
           borderRadius: BorderRadius.circular(8),
         ),
-        child: Text(text,
-            style: TextStyles.styleLGB),
+        child: Text(text, style: TextStyles.styleLGB),
       ),
     );
   }
@@ -150,7 +149,6 @@ class IntroPage extends StatelessWidget {
       onTap: onTap,
       child: Container(
         alignment: Alignment.center,
-
         height: 50,
         decoration: BoxDecoration(
           color: CustomColors.green,

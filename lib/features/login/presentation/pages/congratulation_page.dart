@@ -25,7 +25,8 @@ class CongratulationPage extends StatelessWidget {
                 Align(
                   alignment: Alignment.center,
                   child: Icon(FluentIcons.checkmark_circle_12_filled,
-                      color: CustomColors.green,size: Dimensions.widthMQ*0.7),
+                      color: CustomColors.green,
+                      size: Dimensions.widthMQ * 0.5),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 25, bottom: 15),

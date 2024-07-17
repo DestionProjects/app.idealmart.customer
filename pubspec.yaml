@@ -14,6 +14,7 @@ dependencies:
   fluentui_system_icons: ^1.1.248
   fluentui_icons: ^1.0.0
   iconsax: ^0.0.8
+  flutter_masked_text2: ^0.9.0
 
   flutter:
     sdk: flutter

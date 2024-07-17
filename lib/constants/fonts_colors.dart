@@ -8,6 +8,7 @@ class CustomColors {
   static const Color faintWhite = Color(0xFFF4F6F5);
   static const Color blue = Color(0xFF2A26DA);
   static const Color grey = Color(0xFF808080);
+  static const Color red = Color(0xFFE02020);
 }
 
 class Fonts {

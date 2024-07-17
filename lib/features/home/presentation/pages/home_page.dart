@@ -1,10 +1,7 @@
-// lib/features/home/presentation/pages/home_page.dart
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:idealmart_customer/constants/dimensions.dart';
-
 import 'package:idealmart_customer/constants/fonts_colors.dart';
 import 'package:idealmart_customer/constants/text_styles.dart';
 import 'package:idealmart_customer/core/widgets/imagecontainer.dart';
@@ -28,95 +25,119 @@ class HomePage extends GetView<HomeController> {
         title: Text('Home', style: TextStyles.styleELBB),
         backgroundColor: CustomColors.white,
         leading: Container(
-            margin: const EdgeInsets.only(left: 10),
-            decoration: const BoxDecoration(
-                color: CustomColors.faintWhite, shape: BoxShape.circle),
-            child: IconButton(
-                splashColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                icon: const Icon(Iconsax.menu_1),
-                onPressed: () {})),
+          margin: const EdgeInsets.only(left: 10),
+          decoration: const BoxDecoration(
+            // color: CustomColors.faintWhite,
+            shape: BoxShape.circle,
+          ),
+          child: IconButton(
+            splashColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            icon: const Icon(Iconsax.menu_1),
+            onPressed: () {},
+          ),
+        ),
         actions: [
           Container(
-              margin: const EdgeInsets.only(right: 10),
-              decoration: const BoxDecoration(
-                  color: CustomColors.faintWhite, shape: BoxShape.circle),
-              child: IconButton(
-                  splashColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  icon: const Icon(Iconsax.notification),
-                  onPressed: () {})),
+            margin: const EdgeInsets.only(right: 10),
+            decoration: const BoxDecoration(
+              // color: CustomColors.faintWhite,
+              shape: BoxShape.circle,
+            ),
+            child: IconButton(
+              splashColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              icon: const Icon(Iconsax.notification),
+              onPressed: () {},
+            ),
+          ),
         ],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12),
-        child: Column(children: [
-          Row(
-            children: [
-              Expanded(
-                child: TextField(
-                  style: TextStyles.styleMB,
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor: CustomColors.faintWhite,
-                    prefixIcon: const Icon(Iconsax.search_favorite),
-                    hintText: 'Search your Grocery',
-                    hintStyle: TextStyle(
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    style: TextStyles.styleMB,
+                    decoration: InputDecoration(
+                      contentPadding: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 16),
+                      filled: true,
+                      fillColor: CustomColors.faintWhite,
+                      prefixIcon: const Icon(Iconsax.search_favorite, size: 20),
+                      hintText: 'Search your Grocery',
+                      hintStyle: TextStyle(
                         fontFamily: Fonts.poppins,
-                        fontSize: Dimensions.smallTextSize),
-                    enabledBorder: OutlineInputBorder(
+                        fontSize: Dimensions.smallTextSize,
+                      ),
+                      enabledBorder: OutlineInputBorder(
                         borderSide: const BorderSide(color: Colors.transparent),
-                        borderRadius: BorderRadius.circular(100)),
-                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      focusedBorder: OutlineInputBorder(
                         borderSide: const BorderSide(color: Colors.transparent),
-                        borderRadius: BorderRadius.circular(100)),
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                    ),
                   ),
                 ),
-              ),
-              Container(
+                Container(
                   margin: const EdgeInsets.only(left: 10),
                   decoration: const BoxDecoration(
-                      shape: BoxShape.circle, color: CustomColors.green),
+                    shape: BoxShape.circle,
+                    color: CustomColors.green,
+                  ),
                   child: IconButton(
-                      icon: const Icon(
-                        Iconsax.shop,
-                        color: CustomColors.white,
-                      ),
-                      onPressed: () {}))
-            ],
-          ),
-          const SizedBox(height: 10),
-          CarouselSlider(
-            carouselController: carouselController,
-            items: const [
-              CarouselDriver(),
-              CarouselDriver(),
-              CarouselDriver(),
-            ],
-            options: CarouselOptions(
-              viewportFraction: 1,
-              aspectRatio: 2,
-              autoPlay: true,
-              autoPlayInterval: const Duration(seconds: 3),
-              autoPlayAnimationDuration: const Duration(milliseconds: 800),
-              autoPlayCurve: Curves.fastOutSlowIn,
-              enlargeCenterPage: true,
-              onPageChanged: (index, reason) {
-                controller.carouselIndex.value = index;
-              },
+                    padding: const EdgeInsets.all(10),
+                    icon: const Icon(
+                      Iconsax.shop,
+                      color: CustomColors.white,
+                      size: 20,
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+              ],
             ),
-          ),
-          const SizedBox(height: 8),
-          Obx(() => AnimatedSmoothIndicator(
+            const SizedBox(height: 10),
+            CarouselSlider(
+              carouselController: carouselController,
+              items: const [
+                CarouselDriver(),
+                CarouselDriver(),
+                CarouselDriver(),
+              ],
+              options: CarouselOptions(
+                viewportFraction: 1,
+                aspectRatio: 2,
+                autoPlay: true,
+                autoPlayInterval: const Duration(seconds: 3),
+                autoPlayAnimationDuration: const Duration(milliseconds: 800),
+                autoPlayCurve: Curves.fastOutSlowIn,
+                enlargeCenterPage: true,
+                onPageChanged: (index, reason) {
+                  controller.carouselIndex.value = index;
+                },
+              ),
+            ),
+            const SizedBox(height: 8),
+            Obx(
+              () => AnimatedSmoothIndicator(
                 activeIndex: controller.carouselIndex.value,
                 count: 3,
                 effect: ExpandingDotsEffect(
-                    dotHeight: 8,
-                    dotWidth: 8,
-                    activeDotColor: CustomColors.green,
-                    dotColor: CustomColors.black.withOpacity(0.3)),
-              ))
-        ]),
+                  dotHeight: 8,
+                  dotWidth: 8,
+                  activeDotColor: CustomColors.green,
+                  dotColor: CustomColors.black.withOpacity(0.3),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
