@@ -21,4 +21,6 @@ class TextStyles {
   static TextStyle styleLW = AppStyles.defaultTextStyle(fontSize: Dimensions.largeTextSize,color: CustomColors.white);
   static TextStyle styleMB = AppStyles.defaultTextStyle(fontSize: Dimensions.mediumTextSize);
   static TextStyle styleELBB = AppStyles.defaultTextStyle(fontSize: Dimensions.extraLargeTextSize,fontWeight: FontWeight.bold);
+  static TextStyle styleEELB = AppStyles.defaultTextStyle(fontSize: Dimensions.xxLargeTextSize,fontWeight: FontWeight.bold);
+  static TextStyle styleSB = AppStyles.defaultTextStyle(fontSize: Dimensions.smallTextSize);
 }

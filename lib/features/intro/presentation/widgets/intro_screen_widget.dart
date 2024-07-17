@@ -1,22 +1,22 @@
-// // lib/features/intro/presentation/widgets/intro_screen_widget.dart
-
+// // // lib/features/intro/presentation/widgets/intro_screen_widget.dart
+//
 // import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
 // import '../controllers/intro_controller.dart';
-
+//
 // class IntroScreenWidget extends StatelessWidget {
 //   final PageController pageController;
 //   final List<Map<String, String>> introData;
-
+//
 //   IntroScreenWidget({
 //     required this.pageController,
 //     required this.introData,
 //   });
-
+//
 //   @override
 //   Widget build(BuildContext context) {
 //     final IntroController controller = Get.find<IntroController>();
-
+//
 //     return Scaffold(
 //       body: Stack(
 //         fit: StackFit.expand,

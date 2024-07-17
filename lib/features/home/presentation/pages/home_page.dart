@@ -6,8 +6,7 @@ import 'package:get/get.dart';
 import 'package:idealmart_customer/constants/dimensions.dart';
 
 import 'package:idealmart_customer/constants/fonts_colors.dart';
-import 'package:idealmart_customer/constants/images.dart';
-import 'package:idealmart_customer/constants/textstyles.dart';
+import 'package:idealmart_customer/constants/text_styles.dart';
 import 'package:idealmart_customer/core/widgets/imagecontainer.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:iconsax/iconsax.dart';
@@ -31,7 +30,7 @@ class HomePage extends GetView<HomeController> {
         backgroundColor: CustomColors.white,
         leading: Container(
             margin: const EdgeInsets.only(left: 10),
-            decoration: BoxDecoration(color: CustomColors.faintWhite,shape: BoxShape.circle),
+            decoration: const BoxDecoration(color: CustomColors.faintWhite,shape: BoxShape.circle),
             child: IconButton(
                 splashColor: Colors.transparent,
                 highlightColor: Colors.transparent,
@@ -39,7 +38,7 @@ class HomePage extends GetView<HomeController> {
         actions: [
           Container(
               margin: const EdgeInsets.only(right: 10),
-              decoration: BoxDecoration(color: CustomColors.faintWhite,shape: BoxShape.circle),
+              decoration: const BoxDecoration(color: CustomColors.faintWhite,shape: BoxShape.circle),
               child: IconButton(
                 splashColor: Colors.transparent,
                   highlightColor: Colors.transparent,

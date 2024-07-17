@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'TextStyles.dart';
+import 'package:idealmart_customer/constants/text_styles.dart';
+
+
 import 'dimensions.dart';
 import 'fonts_colors.dart';
 

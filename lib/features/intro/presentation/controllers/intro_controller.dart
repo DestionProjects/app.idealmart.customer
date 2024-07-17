@@ -9,23 +9,23 @@ class IntroController extends GetxController {
     {
       'image':
           'https://img.freepik.com/premium-vector/smiling-delivery-man-running-with-cardbox-courier-uniform-work-cartoon-character-vector-illustration-isolated-white-background_223337-2309.jpg?ga=GA1.1.1751976739.1720021447&semt=ais_user',
-      'title': 'Crafting Culinary Magic',
+      'title': 'Title 1',
       'description':
-          'Our expert chefs prepare your order with love and precision, ensuring a delectable experience.',
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.',
     },
     {
       'image':
           'https://img.freepik.com/premium-vector/boy-walking-carrying-goods-return-village-vacation_10606-6396.jpg?ga=GA1.1.1751976739.1720021447&semt=ais_user',
-      'title': 'Fast and Reliable Delivery',
+      'title': 'Title 2',
       'description':
-          'Get your orders delivered swiftly and safely, straight to your doorstep.',
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.',
     },
     {
       'image':
           'https://img.freepik.com/premium-vector/girl-with-basket-food-her-hands-gets-out-phone-concept-online-orders_638425-249.jpg?ga=GA1.1.1751976739.1720021447&semt=ais_user',
-      'title': 'Join Our Community',
+      'title': 'Title 3',
       'description':
-          'Be a part of our growing family and enjoy exclusive benefits and offers.',
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.',
     },
   ];
 
