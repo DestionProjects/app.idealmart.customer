@@ -19,4 +19,5 @@ class Dimensions {
   static final xxLargeTextSize = widthMQ*0.08;
   static final mediumTextSize = widthMQ * 0.035;
   static final smallTextSize = widthMQ * 0.03;
+  static final xSmallTextSize = widthMQ * 0.025;
 }

@@ -7,7 +7,6 @@ import 'package:idealmart_customer/constants/text_styles.dart';
 import 'package:idealmart_customer/features/login/presentation/pages/forget_password.dart';
 import 'package:idealmart_customer/features/login/presentation/pages/sign_up.dart';
 import 'package:idealmart_customer/features/navigation/presentation/pages/navigation.dart';
-import 'package:iconsax/iconsax.dart';
 
 import '../widgets/login_widgets.dart';
 

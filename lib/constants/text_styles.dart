@@ -38,4 +38,5 @@ class TextStyles {
   static TextStyle styleMGrey = AppStyles.defaultTextStyle(
       fontSize: Dimensions.mediumTextSize,
       color: CustomColors.grey.withOpacity(0.5));
+  static TextStyle styleXSB = AppStyles.defaultTextStyle(fontSize: Dimensions.xSmallTextSize);
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_masked_text2/flutter_masked_text2.dart';
 import 'package:idealmart_customer/constants/custom_widgets.dart';
 import 'package:idealmart_customer/constants/dimensions.dart';
